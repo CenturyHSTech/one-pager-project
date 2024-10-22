@@ -13,24 +13,32 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.9'
+    
+    - name: Create virtual environment
+      run: python -m venv venv
+
     - name: Test HTML
       id: test-html
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: Test HTML
-        setup-command: apt install python3-webcode-tk && apt install python3-file-clerk
-          && apt install pytest
-        command: pytest tests/test_html.py
+        setup-command: . ./venv/bin/activate && pip install -r requirements.txt
+        command: . ./venv/bin/activate && pytest tests/test_html.py
         timeout: 10
         max-score: 4
+
     - name: Test CSS
       id: test-css
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: Test CSS
-        setup-command: apt install python3-webcode-tk && apt install python3-file-clerk
-          && apt install pytest
-        command: pytest tests/test_css.py
+        setup-command: . ./venv/bin/activate && pip install -r requirements.txt
+        command: . ./venv/bin/activate && pytest tests/test_css.py
         timeout: 10
         max-score: 4
     - name: Autograding Reporter

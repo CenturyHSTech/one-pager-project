@@ -24,9 +24,10 @@ for file in files_by_styles:
     tree = cascade.CSSAppliedTree(filepath, stylesheets)
     results = cascade.get_color_contrast_details(tree, "AAA")
     for result in results:
-        if "fail" in result and result not in fails:
+        if "fail" in result:
             msg = f"fail: {filename} - {result}"
-            fails.append(msg)
+            if msg not in fails:
+                fails.append(msg)
         if "success" in result:
             success = result.replace("success", "pass")
     if success and not fails:

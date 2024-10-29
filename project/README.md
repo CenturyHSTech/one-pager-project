@@ -8,7 +8,7 @@ For more details, please read the [One Pager Project Requirements](../README.md)
 * Must ***use appropriate headers*** according to semantic reasoning
 * Must have at least ***three sections each*** labeled ***with an appropriate header***.
     - should be level 2 headings.
-    - sub headings (level 3) are allowed, but only if you are breaking up a section into sub-sections 
+    - [optional] sub headings (level 3) are allowed, but only if you are breaking up a section into sub-sections 
 * Must have (on average) at least two paragraphs per section (for a total of 6 in all).
 * Must include at least **2 images**, and every image, should be...
     - inside **a figure** element

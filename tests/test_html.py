@@ -22,18 +22,13 @@ min_required_elements = [
     ("a", 4)
     ]
 
-exact_number_of_elements = []
-min_number_of_elements = []
-
-for file in all_html_files:
-    for i in range(len(required_elements)):
-        # Get requirements for exact number
-        element, number = required_elements[i]
-        exact_number_of_elements.append((file, element, number))
-    for i in range(len(min_required_elements)):
-        # Get requirements for minimum number
-        element, number = min_required_elements[i]
-        min_number_of_elements.append((file, element, number))
+exact_number_of_elements = html_tools.get_number_of_elements_per_file(
+    project_dir, required_elements
+)
+min_number_of_elements = html_tools.get_number_of_elements_per_file(
+    project_dir, min_required_elements
+)
+html_validation_results = validator.get_project_validation(project_dir)
 
 
 @pytest.fixture
@@ -74,5 +69,7 @@ def test_passes_html_validation(html_files):
     if not html_files:
         assert "html files" in html_files
     for file in html_files:
-        errors += validator.get_markup_validity(file)
+        results = validator.get_markup_validity(file)
+        for result in results:
+            errors.append(result.get("message"))
     assert not errors

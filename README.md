@@ -38,6 +38,15 @@ Students will be generate a **one pager** web project devoted to a topic of choi
     - According to the [Color Contrast Checker](), *"Large text is defined as ...**18.66px and bold or larger**, or ...**24px or larger**."*
 * All HTML and CSS must pass W3C Validation with no errors.
 
+### Design Requirements:
+Note: these requirements will be scored directly by your teacher.
+* Above all, ***text must be readable*** (both through the font-face as well as in the use of high contrast colors)
+* Use of fonts (no more than 2) and colors match the content of the site.
+* All paragraphs of text are broken up into smaller chunks of text and  left-aligned or justified (NOT centered).
+* Bullet and numbered lists should also be left-aligned.
+* Typography follows most guidelines of the [Practical Typography Summary of Key Rules](https://practicaltypography.com/summary-of-key-rules.html) especially font size, line spacing, and line length.
+* Layout is balanced without any irregular gaps that call attention to themselves. Any images should be floated so the text wraps around it.
+
 [top](#one-pager-project) | [learning target](#learning-target) | [requirements](#requirements) | [instructions](#instructions) | [FTW: For the Win](#for-the-win)
 
 ## Instructions:
